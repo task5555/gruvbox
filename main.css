@@ -1,0 +1,915 @@
+/*             ﷽
+                         _                
+                        | |  
+   __ _ _ __ _   ___   _| |__   _____  __ 
+  / _` | '__| | | \ \ / / '_ \ / _ \ \/ / 
+ | (_| | |  | |_| |\ V /| |_) | (_) >  <  
+  \__, |_|   \__,_| \_/ |_.__/ \___/_/\_\ 
+   __/ |                                  
+  |___/                                   */
+/*         last update: 12-14-2024        */
+body {
+	font-family: 'Amiri Quran', serif;
+	margin: 0;
+	background-color: #282828;
+	color: #ebdbb2;
+}
+
+table.toolbar {
+	font-size: 12px;
+	font-family: 'Amiri Quran', serif;
+	width: 100%;
+	border-bottom: 1px solid #928374;
+	background-color: #3c3836;
+	text-align: right;
+}
+
+table.toolbar td {
+	color: #bdae93;
+	padding-right: 8px;
+	padding-top: 3px;
+	padding-bottom: 4px;
+}
+
+table.toolbar td a {
+	color: #83a598;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+table.toolbar td span {
+	color: #458588;
+	font-weight: bold;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+table.pageTemplate td.logo1 {
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	padding-left: 0.4em;
+	padding-right: 0.5em;
+	background: #ebdbb2;
+}
+
+table.pageTemplate td.logoPad {
+	color: #b8bb26;
+	background: #b8bb26;
+}
+
+table.pageTemplate td.userBox {
+	font-size: 0.833em;
+}
+
+table.pageTemplate td.userBox a {
+	color: #928374;
+}
+
+table.pageTemplate td.searchBox {
+	text-align: right;
+	vertical-align: top;
+	padding-top: 0.5em;
+}
+
+table.pageTemplate td.searchBox input {
+	font-size: 0.83em;
+	background-color: #3c3836;
+	color: #ebdbb2;
+	border: 1px solid #928374;
+}
+
+table.pageTemplate td.searchBox a {
+	font-size: 0.83em;
+	color: #83a598;
+}
+
+table.pageTemplate td.pad {
+	border-left: 3px solid #a89984;
+	color: white;
+}
+
+table.pageTemplate td.leftfooter {
+	background: #1d2021;
+	font-size: 0.8333em;
+	padding-left: 5px;
+	padding-top: 3em;
+	padding-bottom: 5em;
+}
+
+table.pageTemplate td.leftfooter a {
+	color: #928374;
+}
+
+table.pageTemplate td.footer {
+	padding-top: 3em;
+	padding-bottom: 5em;
+}
+
+table.pageTemplate td.footer p {
+	font-size: 0.83em;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 0.15em;
+	color: #928374;
+}
+
+a, a:visited {
+	color: #83a598;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+table.pageTemplate td.contentCell {
+	vertical-align: top;
+}
+
+table.pageTemplate td.contentCell div.content {
+	width: 740px;
+	text-align: justify;
+	line-height: 1.33em;
+}
+
+table.pageTemplate td.title h2 {
+	margin: 0;
+}
+
+h2 span.ax {
+	font: 1.2em 'Amiri Quran', serif;
+	color: #d3869b;
+}
+
+table.pageTemplate td.leedsLogo {
+	text-align: right;
+	vertical-align: bottom;
+}
+
+table.pageTemplate td.leedsText {
+	font: 0.833em 'Amiri Quran', serif;
+	text-align: right;
+	vertical-align: top;
+	padding-top: 0.4em;
+	border-bottom: 2px solid #665c54;
+}
+
+table.pageTemplate td.leedsText a {
+	color: #928374;
+}
+
+div.bismi {
+	text-align: center;
+	margin-top: 4em;
+	color: #fbf1c7;
+}
+
+h3.chapterName {
+	margin: 0;
+	text-align: center;
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+	color: #98971a;
+	font-weight: normal;
+}
+
+h2 {
+	font: 1.4em 'Amiri Quran', serif;
+	color: #458588;
+	margin-bottom: 0;
+}
+
+h4 {
+	margin-bottom: 0.4em;
+	color: #d3869b;
+}
+
+p.first {
+	margin-top: 0;
+}
+
+ul.also {
+	margin: 0;
+	padding-left: 1em;
+	color: #ebdbb2;
+}
+
+img {
+	border: 0;
+}
+
+pre {
+	font: 10pt 'Courier New', monospace;
+	color: #83a598;
+	background: #3c3836;
+	padding: 5px;
+	border: 1px solid #928374;
+}
+
+p.code {
+	font: 12pt 'Courier New', monospace;
+	margin-left: 20px;
+	color: #ebdbb2;
+}
+
+pre.example {
+	margin-top: 0px;
+	background: #3c3836;
+}
+
+.segGray {
+	color: #928374;
+}
+
+.segSky {
+	color: #83a598;
+}
+
+.segBlue {
+	color: #458588;
+}
+
+.segPurple {
+	color: #b16286;
+}
+
+.segBrown {
+	color: #d79921;
+}
+
+.segMetal {
+	color: #928374;
+}
+
+.segGold {
+	color: #fabd2f;
+}
+
+.segSeagreen {
+	color: #8ec07c;
+}
+
+.segGreen {
+	color: #98971a;
+}
+
+.segRed {
+	color: #fb4934;
+}
+
+.segRust {
+	color: #cc241d;
+}
+
+.segPink {
+	color: #d3869b;
+}
+
+.segRose {
+	color: #fbf1c7;
+}
+
+.segNavy {
+	color: #458588;
+}
+
+.segOrange {
+	color: #d65d0e;
+}
+
+.segSilver {
+	color: #a89984;
+}
+
+div.navigationPane {
+	text-align: center;
+	margin-top: 2em;
+	font: 0.833em 'Amiri Quran', serif;
+}
+
+div.navigationPane img {
+	vertical-align: middle;
+}
+
+table.morphologyTable {
+	width: 100%;
+	border-top: 1px solid #928374;
+	background: #3c3836;
+}
+
+table.morphologyTable td {
+	font: 0.833em 'Amiri Quran', serif;
+	border-bottom: 1px dashed #928374;
+	height: 2em;
+	line-height: 1.6em;
+	text-align: center;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	color: #ebdbb2;
+}
+
+table.morphologyTable tr.head td {
+	font-weight: bold;
+	background: #282828;
+	border-bottom: 1px solid #928374;
+}
+
+table.morphologyTable td.head3 {
+	text-align: right;
+	color: #bdae93;
+}
+
+table.morphologyTable td.col3 {
+	text-align: right;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+table.morphologyTable td.ic {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	white-space: nowrap;
+}
+
+table.morphologyTable td.ic img.sec {
+	margin-bottom: 47px;
+	margin-left: 2px;
+}
+
+table.morphologyTable td.ic img.num {
+	margin-bottom: 47px;
+	margin-right: 2px;
+}
+
+table.morphologyTable td.ic img.saj {
+	margin-bottom: 52px;
+	margin-right: 2px;
+}
+
+table.morphologyTable td.ic a img {
+	border: 1px solid #3c3836;
+	padding: 0.5em;
+}
+
+table.morphologyTable td.ic a:hover img {
+	border: 1px solid #83a598;
+	background: #504945;
+}
+
+table.morphologyTable div.arabicGrammar {
+	font-family: 'Amiri Quran', serif;
+	color: #b8bb26;
+	font-size: 1.4em;
+	font-weight: bold;
+	margin-top: 0.4em;
+	direction: rtl;
+}
+
+span.at, span.an {
+	font-family: 'Amiri Quran', serif;
+	color: #b8bb26;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+i.ab {
+	color: #83a598;
+	font-family: 'Amiri Quran', serif;
+}
+
+span.location {
+	color: #928374;
+}
+
+span.phonetic {
+	color: #83a598;
+}
+
+span.reference, a.reference {
+	color: #a89984;
+}
+
+div.graph {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.graph a {
+	position: relative;
+	display: block;
+	float: left;
+}
+
+div.graph a span {
+	display: none;
+}
+
+div.graph a:hover {
+	border: 1px solid #458588;
+}
+
+div.graph a:hover span {
+	opacity: 0.09;
+	background: #458588;
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+}
+
+p.verseImage {
+	text-align: center;
+}
+
+div#flashTitle {
+	border-top: 1px solid #928374;
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	background: #fabd2f;
+	text-align: center;
+	line-height: 1.6em;
+	font-weight: bold;
+	color: #3c3836;
+}
+
+div#flashTitle a {
+	font-size: 0.833em;
+	color: #83a598;
+}
+
+div#flashPlayer {
+	border-top: 1px solid #928374;
+	border-bottom: 1px solid #928374;
+	width: 350px;
+	margin: auto;
+}
+
+p.inlineToken {
+	text-align: center;
+	font: 0.833em 'Amiri Quran', serif;
+	line-height: 1.6em;
+	margin-bottom: 0;
+	color: #ebdbb2;
+}
+
+p.inlineToken a.tokenLink img {
+	border: 1px solid #3c3836;
+	padding: 0.5em;
+	margin-top: 0.5em;
+}
+
+p.inlineToken a.tokenLink:hover img {
+	border: 1px solid #83a598;
+	background: #504945;
+}
+
+p.subtitle {
+	font-size: 0.8333em;
+	font-style: italic;
+	color: #928374;
+}
+
+table.conceptTable {
+	width: 100%;
+}
+
+table.conceptTable td.documentation {
+	vertical-align: top;
+	text-align: left;
+	color: #ebdbb2;
+}
+
+table.conceptTable td.side {
+	vertical-align: top;
+	padding-left: 1.5em;
+	color: #ebdbb2;
+}
+
+table.infoBox {
+	border: 1px solid #928374;
+	background: #3c3836;
+}
+
+table.infoBox td {
+	font: 0.8333em 'Amiri Quran', serif;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	vertical-align: top;
+	color: #ebdbb2;
+}
+
+table.infoBox td.title {
+	text-align: center;
+	font-weight: bold;
+	color: #d3869b;
+}
+
+table.infoBox td.name {
+	padding-bottom: 6px;
+	font: 1.25em 'Amiri Quran', serif;
+	text-align: center;
+	color: #458588;
+}
+
+table.infoBox td.arabic {
+	padding-top: 6px;
+	font: 2em 'Amiri Quran', serif;
+	background: #b8bb26;
+	color: #282828;
+	text-align: center;
+}
+
+table.infoBox td.type {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 1.2em;
+	background: #b8bb26;
+	color: #282828;
+	text-align: center;
+}
+
+table.infoBox td.property {
+	font-weight: bold;
+	color: #ebdbb2;
+}
+
+table.infoBox span, table.infoBox a {
+	white-space: nowrap;
+}
+
+table.infoBox span.phonetic {
+	color: #83a598;
+}
+
+table.hierarchyTable td {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+table.imageBox {
+	border: 1px solid #928374;
+	background: #3c3836;
+}
+
+table.imageBox td.c1 {
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-right: 7px;
+	color: #ebdbb2;
+}
+
+table.imageBox td.c2 {
+	font-size: 0.8333em;
+	padding: 7px;
+	color: #ebdbb2;
+}
+
+table.commentTable {
+	font: 0.833em 'Amiri Quran', serif;
+	background: #3c3836;
+	color: #ebdbb2;
+}
+
+table.commentTable td {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	vertical-align: top;
+	color: #ebdbb2;
+}
+
+table.commentTable td.commentText, table.commentTable td.commentLabel {
+	padding-right: 0.8em;
+	padding-top: 0.8em;
+	color: #ebdbb2;
+}
+
+table.commentTable td.commentLabel {
+	padding-left: 2em;
+	font-weight: bold;
+	text-align: right;
+}
+
+table.commentTable td.commentButton {
+	padding: 0;
+	color: #ebdbb2;
+}
+
+.commentBox {
+	width: 500px;
+	font: 10pt 'Amiri Quran', serif;
+	color: #ebdbb2;
+}
+
+table.commentTable span.error {
+	font-style: italic;
+	color: #fb4934;
+}
+
+p#postComment {
+	font-style: italic;
+	color: #928374;
+}
+
+table.postedCommentTable {
+	width: 100%;
+	margin-bottom: 1em;
+	color: #ebdbb2;
+}
+
+table.postedCommentTable td {
+	vertical-align: top;
+	font-size: 0.8333em;
+	padding-bottom: 1.5em;
+}
+
+table.postedCommentTable td.c1 {
+	width: 60px;
+	color: #ebdbb2;
+}
+
+p.postedName {
+	color: #458588;
+	font-weight: bold;
+	margin: 0;
+}
+
+p.postedDate {
+	color: #928374;
+	margin: 0;
+}
+
+p.postedText {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	color: #ebdbb2;
+}
+
+table.selectChapter {
+	font: 0.833em 'Amiri Quran', serif;
+	margin: 0;
+	color: #ebdbb2;
+}
+
+table.selectChapter td {
+	padding-bottom: 0.3em;
+	color: #ebdbb2;
+}
+
+select#verseList {
+	width: 120px;
+}
+
+table.pageTemplate td.menuContainer {
+	border-top: 3px solid rgb(184, 187, 38); 
+	vertical-align: top;
+	background: rgb(40, 40, 40); 
+	font-family: "Amiri Quran", serif;
+}
+
+table.menu {
+	width: 100%;
+	font-family: "Amiri Quran", serif;
+}
+
+table.menu td.level1 a:hover {
+	text-decoration: none;
+}
+
+table.menu td.level1 {
+	border-bottom: 1px dotted rgb(50, 48, 47); 
+}
+
+table.menu td.selected {
+	background: rgb(29, 32, 33); 
+}
+
+table.menu td.hideBorder {
+	border-bottom: none;
+}
+
+table.menu td.lastMenuItem {
+	border-bottom: 1px dotted rgb(50, 48, 47);
+	padding-bottom: 15px;
+}
+
+table.menu td.level1 a {
+	color: rgb(235, 219, 178);
+	display: block;
+	padding: 7px;
+}
+
+table.menu td.level1 a:hover {
+	background: rgb(80, 73, 69);
+}
+
+table.menu td.level2 {
+	background: rgb(29, 32, 33); 
+	color: rgb(251, 241, 199); 
+	padding-left: 7px;
+	padding-top: 10px;
+}
+
+table.menu td.level3 {
+	background: rgb(29, 32, 33);
+	padding-left: 13px;
+}
+
+table.menu td.level3 a {
+	color: rgb(213, 196, 161); 
+}
+
+table.menu td.level4 {
+	background: rgb(29, 32, 33); 
+	padding-left: 10px;
+}
+
+table.menu td.level4 a {
+	color: rgb(213, 196, 161); 
+}
+
+table.menu td.firstSubItem {
+	padding-top: 0;
+}
+
+table.taf {
+	width: 100%;
+	border-top: 1px dashed rgb(146, 131, 116);
+	font-family: "Amiri Quran", serif;
+}
+
+table.taf td {
+	font-size: 0.8333em;
+	text-align: left;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-bottom: 1px dashed rgb(146, 131, 116); 
+	font-family: "Amiri Quran", serif;
+}
+
+table.taf td.c1 {
+	width: 25%;
+	padding-left: 5px;
+}
+
+table.taf td.c1 span.l {
+	color: rgb(184, 187, 38); 
+}
+
+table.taf td.c2 {
+	width: 30%;
+	padding-left: 5px;
+}
+
+table.taf td.c3 {
+	text-align: right;
+	font-family: "Amiri Quran", serif;
+	font-size: 1.2em;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+table.taf td.c3 span.auu {
+	color: rgb(251, 73, 52);
+	font-weight: bold;
+}
+
+div.sectionArea {
+    font-family: "Amiri Quran", serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: rgb(40 40 40);
+    cursor: pointer;
+    padding-left: 4px;
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+div.sectionArea a.selected {
+    color: rgb(251, 73, 52);
+}
+
+button {
+	background: rgb(184, 187, 38); 
+	color: rgb(40, 40, 40);
+	font-family: "Amiri Quran", serif;
+	font-size: 0.9em; 
+	padding: 5px 12px;
+	border: 2px solid rgb(146, 131, 116); 
+	border-radius: 5px;
+	height: 30px; 
+	cursor: pointer;
+	transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+button:hover {
+	background: rgb(251, 241, 199);
+	color: rgb(29, 32, 33);
+	border-color: rgb(184, 187, 38);
+}
+
+button:active {
+	background: rgb(129, 161, 193); 
+	color: rgb(40, 40, 40); 
+	border-color: rgb(251, 73, 52);
+}
+
+button:disabled {
+	background: rgb(80, 73, 69);
+	color: rgb(146, 131, 116);
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+select#chapterList {
+	width: 100%;
+	background: rgb(40, 40, 40);
+	color: rgb(235, 219, 178); 
+	font-family: "Amiri Quran", serif;
+	font-size: 0.9em;
+	padding: 5px; 
+	border: 2px solid rgb(146, 131, 116); 
+	border-radius: 5px;
+	height: 30px; 
+	transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+	overflow-y: auto;
+	appearance: none; 
+}
+
+select#chapterList:hover {
+	background: rgb(29, 32, 33);
+	color: rgb(251, 241, 199);
+	border-color: rgb(184, 187, 38);
+}
+
+select#chapterList:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgb(184, 187, 38); 
+	border-color: rgb(251, 241, 199); 
+	color: rgb(251, 241, 199);
+}
+
+select#chapterList option {
+	background: rgb(40, 40, 40);
+	color: rgb(235, 219, 178); 
+	font-family: "Amiri Quran", serif;
+	padding: 3px;
+}
+
+select#verseList {
+	width: 100%;
+	background: rgb(40, 40, 40); 
+	color: rgb(235, 219, 178); 
+	font-family: "Amiri Quran", serif;
+	font-size: 0.9em; 
+	padding: 5px; 
+	border: 2px solid rgb(146, 131, 116); 
+	border-radius: 5px;
+	height: 30px; 
+	transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+	overflow-y: auto;
+	appearance: none; 
+}
+
+select#verseList:hover {
+	background: rgb(29, 32, 33); 
+	color: rgb(251, 241, 199); 
+	border-color: rgb(184, 187, 38); 
+}
+
+select#verseList:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgb(184, 187, 38);
+	border-color: rgb(251, 241, 199); 
+	color: rgb(251, 241, 199); 
+}
+
+select#verseList option {
+	background: rgb(40, 40, 40); 
+	color: rgb(235, 219, 178); 
+	font-family: "Amiri Quran", serif;
+	padding: 3px; 
+}
+
+::-webkit-scrollbar {
+	width: 8px; 
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(29, 32, 33); 
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(184, 187, 38); 
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(251, 241, 199);
+}
+
